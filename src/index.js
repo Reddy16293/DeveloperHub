@@ -1,6 +1,6 @@
 const express= require('express');
 const dbconnect= require('./config/database.js');
-const {Devuser} = require('./models');
+const {Devuser,AddReview} = require('./models');
 const jwt= require('jsonwebtoken');
 const middleware= require('./middleware.js');
 const app=express();
@@ -84,11 +84,26 @@ app.get('/allprofiles',middleware,async (req,res)=>{
 app.get('/myprofile',middleware,async(req,res)=>{
     try{
         let user =await Devuser.findById(req.user.id);
+        
         return res.json(user);
 
+    }
+    catch(error){
+        console.log(error);
+        return res.status(500).send('Server Error');
+    }
+})
+app.post('/addreview',middleware,async(req,res)=>{
+    try{
+        const {taskworker,rating}= req.body;
+        const exist =await Devuser.findById(req.user.id);
+        const  newreview= new AddReview({
+            taskprovider:exist.fullname,
+            taskworker,rating
+        })
+        newreview.save();
+        return res.status(200).AddReviewsend("Review Updated successfully")
 
-
-        
     }
     catch(error){
         console.log(error);
