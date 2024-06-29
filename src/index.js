@@ -24,50 +24,7 @@ app.get('/',(req,res)=>{
 
 
 
-app.get('/allprofiles',middleware,async (req,res)=>{
-    try{
-        const allProfiles=await Devuser.find();
-        return res.json(allProfiles);
 
-
-    }
-    catch(error){
-        console.log(error);
-        return res.status(500).send('Server Error');
-    }
-})
-
-app.get('/myprofile',middleware,async(req,res)=>{
-    try{
-        let user =await Devuser.findById(req.user.id);
-        
-        return res.json(user);
-
-    }
-    catch(error){
-        console.log(error);
-        return res.status(500).send('Server Error');
-    }
-})
-app.post('/addreview', middleware, async (req, res) => {
-    try {
-        const { taskworker, rating } = req.body;
-        const exist = await Devuser.findById(req.user.id);
-        if (!exist) {
-            return res.status(404).send('User not found');
-        }
-        const newReview = new Review({
-            taskprovider: exist.fullname,
-            taskworker,
-            rating
-        });
-        await newReview.save();
-        return res.status(200).send("Review updated successfully");
-    } catch (error) {
-        console.log(error);
-        return res.status(500).send('Server Error');
-    }
-});
 
 
 app.get('/myreview', middleware, async (req, res) => {
