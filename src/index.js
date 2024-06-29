@@ -81,6 +81,20 @@ app.get('/allprofiles',middleware,async (req,res)=>{
     }
 })
 
+app.get('/myprofile',middleware,async(req,res)=>{
+    try{
+        let user =await Devuser.findById(req.user.id);
+        return res.json(user);
+
+
+
+        
+    }
+    catch(error){
+        console.log(error);
+        return res.status(500).send('Server Error');
+    }
+})
 app.listen(3000,async()=>{
     console.log('Server is running on port 3000');
     await dbconnect();
