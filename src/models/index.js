@@ -1,5 +1,5 @@
 const Devuser = require('./devusermodel');
-const AddReview = require('./review-model');
+const Review = require('./review-model');
 module.exports = {
-    Devuser,AddReview,
+    Devuser,Review,
 };

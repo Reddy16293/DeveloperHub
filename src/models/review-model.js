@@ -16,5 +16,5 @@ const review=new mongoose.Schema({
       
 
 })
- const AddReview= mongoose.model('AddReview',review);
- module.exports=AddReview;
+ const  Review= mongoose.model('Review',review);
+ module.exports=Review;
