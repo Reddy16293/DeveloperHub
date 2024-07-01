@@ -13,7 +13,21 @@ const Template = ({ title, desc1, desc2, image, formtype, setIsLoggedIn, formdat
           <br />
           <span>{desc2}</span>
         </p>
-        {formtype === "signup" ? <SignupForm setIsLoggedIn={setIsLoggedIn} /> : <LoginForm setIsLoggedIn={setIsLoggedIn} formdata={formdata} ChangeHandler={ChangeHandler} submitHandler={submitHandler} />}
+        {formtype === "signup" ? (
+  <SignupForm
+    setIsLoggedIn={setIsLoggedIn}
+    formdata={formdata}
+    ChangeHandler={ChangeHandler}
+    submitHandler={submitHandler}
+  />
+) : (
+  <LoginForm
+    setIsLoggedIn={setIsLoggedIn}
+    formdata={formdata}
+    ChangeHandler={ChangeHandler}
+    submitHandler={submitHandler}
+  />
+)}
         <div className='flex w-full items-center my-4 max-w-lg gap-x-2'>
           <div className='w-full h-[1px] bg-teal-300'></div>
           <p className='text-white'>OR</p>
@@ -25,7 +39,7 @@ const Template = ({ title, desc1, desc2, image, formtype, setIsLoggedIn, formdat
         </button>
       </div>
       <div>
-        <img src={image} alt="sign/sigup" height={490} width={558} />
+        <img src={image} alt="sign/signup" height={490} width={558} />
       </div>
     </div>
   );
