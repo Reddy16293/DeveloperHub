@@ -1,17 +1,18 @@
+// SignupForm.jsx
 import React, { useState } from 'react';
 import { AiOutlineEyeInvisible, AiOutlineEye } from 'react-icons/ai';
 
-const SignupForm = ({ setIsLoggedIn, formdata, ChangeHandler, submitHandler }) => {
+const SignupForm = ({ formdata, ChangeHandler, submitHandler }) => {
   const [showPassword, setShowPassword] = useState(false);
 
   return (
     <div>
       <form className='max-w-lg' onSubmit={submitHandler}>
         <div className='text-white'>
-          <label className='font-semibold h-full'>
+          <label className='font-semibold'>
             <p>Full Name<sup>*</sup></p>
             <input
-              className='bg-teal-800 rounded text-cyan-400 px-[12px] py-2 max-w-120 w-full'
+              className='bg-teal-800 rounded text-cyan-400 px-3 py-2 w-full'
               required
               type='text'
               name='fullname'
@@ -22,12 +23,12 @@ const SignupForm = ({ setIsLoggedIn, formdata, ChangeHandler, submitHandler }) =
           </label>
         </div>
         <div className='text-white'>
-          <label className='font-semibold h-full'>
+          <label className='font-semibold'>
             <p>Email<sup>*</sup></p>
             <input
-              className='bg-teal-800 rounded text-cyan-400 px-[12px] py-2 max-w-120 w-full'
+              className='bg-teal-800 rounded text-cyan-400 px-3 py-2 w-full'
               required
-              type='email'
+              type='text'
               name='email'
               value={formdata.email}
               onChange={ChangeHandler}
@@ -36,10 +37,10 @@ const SignupForm = ({ setIsLoggedIn, formdata, ChangeHandler, submitHandler }) =
           </label>
         </div>
         <div className='text-white'>
-          <label className='font-semibold h-full'>
+          <label className='font-semibold'>
             <p>Mobile<sup>*</sup></p>
             <input
-              className='bg-teal-800 rounded text-cyan-400 px-[12px] py-2 max-w-120 w-full'
+              className='bg-teal-800 rounded text-cyan-400 px-3 py-2 w-full'
               required
               type='text'
               name='mobile'
@@ -50,10 +51,10 @@ const SignupForm = ({ setIsLoggedIn, formdata, ChangeHandler, submitHandler }) =
           </label>
         </div>
         <div className='text-white'>
-          <label className='font-semibold h-full'>
+          <label className='font-semibold'>
             <p>Skills<sup>*</sup></p>
             <input
-              className='bg-teal-800 rounded text-cyan-400 px-[12px] py-2 max-w-120 w-full'
+              className='bg-teal-800 rounded text-cyan-400 px-3 py-2 w-full'
               required
               type='text'
               name='skills'
@@ -61,15 +62,15 @@ const SignupForm = ({ setIsLoggedIn, formdata, ChangeHandler, submitHandler }) =
               onChange={ChangeHandler}
               placeholder='Enter your Skills'
             />
-            <p>* Please include commas after every skill</p>
+            <p className='text-sm'>* Please include commas after every skill</p>
           </label>
         </div>
         <div className='text-white'>
-          <label className='font-semibold h-full'>
+          <label className='font-semibold'>
             <p>Password<sup>*</sup></p>
             <div className='relative'>
               <input
-                className='bg-teal-800 rounded text-cyan-400 px-[12px] py-2 w-full pr-10'
+                className='bg-teal-800 rounded text-cyan-400 px-3 py-2 w-full pr-10'
                 required
                 type={showPassword ? 'text' : 'password'}
                 name='password'
@@ -84,11 +85,11 @@ const SignupForm = ({ setIsLoggedIn, formdata, ChangeHandler, submitHandler }) =
           </label>
         </div>
         <div className='text-white'>
-          <label className='font-semibold h-full'>
+          <label className='font-semibold'>
             <p>Confirm Password<sup>*</sup></p>
             <div className='relative'>
               <input
-                className='bg-teal-800 rounded text-cyan-400 px-[12px] py-2 w-full pr-10'
+                className='bg-teal-800 rounded text-cyan-400 px-3 py-2 w-full pr-10'
                 required
                 type={showPassword ? 'text' : 'password'}
                 name='confirmpassword'

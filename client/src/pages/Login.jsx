@@ -44,7 +44,7 @@ const Login = ({ setIsLoggedIn }) => {
   };
 
   if (isAuthenticated) {
-    return <Navigate to='/myprofile' />;
+    return <Navigate to='/dashboard' />;
   }
 
   return (
