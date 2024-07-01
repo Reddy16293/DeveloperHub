@@ -1,7 +1,7 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import Template from '../components/Template';
 import loginpic from '../assets/login.jpg';
-import { useNavigate } from 'react-router';
+import { useNavigate, Navigate } from 'react-router';
 import axios from 'axios';
 import toast from 'react-hot-toast';
 
@@ -13,25 +13,39 @@ const Login = ({ setIsLoggedIn }) => {
     password: ''
   });
 
+  const [isAuthenticated, setIsAuthenticated] = useState(false);
+
+  useEffect(() => {
+    const token = localStorage.getItem('token');
+    if (token) {
+      setIsAuthenticated(true);
+      setIsLoggedIn(true);
+    }
+  }, []); // Empty dependency array ensures this runs only once after the initial render
+
   const ChangeHandler = (event) => {
     setFormData({ ...formdata, [event.target.name]: event.target.value });
   };
-  
 
   const submitHandler = (event) => {
     event.preventDefault();
     axios.post('http://localhost:5000/api/login', formdata)
       .then(res => {
         console.log("Response from server:", res.data);
-        navigate('/dashboard');
-        // Handle token storage and navigation here
+        localStorage.setItem('token', res.data.token);
+        setIsAuthenticated(true);
+        setIsLoggedIn(true);
+        toast.success('Login successful');
       })
       .catch(err => {
         console.error("Error:", err);
-        // Handle error messages or display toasts for the user
+        toast.error('Login failed. Please check your credentials and try again.');
       });
   };
-  
+
+  if (isAuthenticated) {
+    return <Navigate to='/myprofile' />;
+  }
 
   return (
     <Template

@@ -7,6 +7,7 @@ const Navbar = ({ isLoggedIn, setIsLoggedIn }) => {
   const navigate = useNavigate();
 
   const handleLogout = () => {
+    localStorage.removeItem('token');
     setIsLoggedIn(false);
     toast.success('Logged out successfully');
     navigate('/login', { replace: true });
