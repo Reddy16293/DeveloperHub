@@ -17,7 +17,7 @@ const LoginForm = ({ setIsLoggedIn, formdata, ChangeHandler, submitHandler }) =>
           <input
             className='bg-teal-800 rounded text-cyan-400 px-[12px] py-2 max-w-120 w-full'
             required
-            type='email'
+            type='text'
             name='email'
             value={formdata.email}
             onChange={ChangeHandler}
