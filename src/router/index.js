@@ -2,9 +2,9 @@ const express = require('express');
 const middleware= require('../middleware.js');
 const router=express.Router();
 const {Register,Login,AllUsers,MyProfile,AddReview,MyReview}= require('../controller');
-router.post('/register',middleware,Register);
+router.post('/register',Register);
 
-router.post('/login',middleware,Login);
+router.post('/login',Login);
 
 router.get('/allprofiles',middleware,AllUsers);
 

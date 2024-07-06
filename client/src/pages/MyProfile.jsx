@@ -52,45 +52,45 @@ const MyProfile = ({ isLoggedIn }) => {
       </div>
       
       <div className='flex flex-col md:flex-row justify-center items-center gap-10'>
-        <div className='flex flex-col justify-center items-center gap-5'>
+        <div className='flex flex-col justify-center items-center gap-5 bg-gray-800 p-6 rounded-lg'>
           <div>
             <img src={userpic} alt="user" className='object-cover w-[120px] h-[120px] rounded-full' />
           </div>
           
           <div className='flex flex-col justify-center items-center gap-1'>
-            <h1><b>Full Name:</b> {userData.fullname}</h1>
-            <h1><b>Email:</b> {userData.email}</h1>
-            <h1><b>Mobile:</b> {userData.mobile}</h1>
-            <h1><b>Country:</b> India</h1>
-            <button className='bg-blue-500 py-1 px-3 rounded mt-4'>Edit Profile</button>
+            <h1 className='text-2xl font-semibold'><b>Full Name:</b> {userData.fullname}</h1>
+            <h1 className='text-2xl font-semibold'><b>Email:</b> {userData.email}</h1>
+            <h1 className='text-2xl font-semibold'><b>Mobile:</b> {userData.mobile}</h1>
+            <h1 className='text-2xl font-semibold'><b>Country:</b> India</h1>
+            <Link to='#' className='bg-blue-500 py-2 px-6 rounded mt-4 text-xl text-white hover:bg-blue-600 transition duration-300 ease-in-out'>Edit Profile</Link>
           </div>
         </div>
 
         <div className='flex flex-col justify-center items-center gap-1 md:ml-10'>
           <h4 className='text-2xl text-blue-100 font-semibold mb-2'>Skills</h4>
           {userData.skills ? (
-            <ul className='list-disc pl-4'>
+            <ul className='list-disc pl-4 text-xl text-pink-200'>
               {userData.skills.split(',').map((skill, index) => (
-                <li key={index} className='text-xl text-pink-200'>{skill.trim()}</li>
+                <li key={index}>{skill.trim()}</li>
               ))}
             </ul>
           ) : (
-            <p>No skills available</p>
+            <p className='text-xl'>No skills available</p>
           )}
         </div>
       </div>
       
-      <div className='w-full flex flex-col justify-center items-center'>
-        <h1 className='text-2xl text-blue-100 font-semibold mb-2'>Ratings</h1>
+      <div className='w-full flex flex-col justify-center items-center mt-10'>
+        <h1 className='text-3xl text-blue-100 font-semibold mb-4'>Ratings</h1>
         {myReview ? (
           myReview.map(review => (
-            <div key={review._id} className='mb-4'>
-              <h4><Link to='#'>{review.taskprovider}</Link></h4>
-              <h2>Rating: {review.rating}/5</h2>
+            <div key={review._id} className='bg-gray-800 p-4 rounded-lg mb-4 w-full'>
+              <h4 className='text-xl font-semibold mb-2'><Link to='#' className='text-blue-300 hover:underline'>{review.taskprovider}</Link></h4>
+              <h2 className='text-2xl'>Rating: {review.rating}/5</h2>
             </div>
           ))
         ) : (
-          <p>No reviews available</p>
+          <p className='text-xl'>No reviews available</p>
         )}
       </div>
     </div>

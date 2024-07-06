@@ -8,6 +8,7 @@ import Dashboard from "./pages/Dashboard";
 import PrivateRoute from "./components/PrivateRoute";
 import MyProfile from "./pages/MyProfile";
 import ViewProfile from "./pages/ViewProfile";
+import Contact from "./pages/Contact";
 
 const App = () => {
   const [isLoggedIn, setIsLoggedIn] = useState(false);
@@ -50,6 +51,7 @@ const App = () => {
             </PrivateRoute>
           }
         />
+        <Route path='/contact' element={<Contact />} />
       </Routes>
     </div>
   );

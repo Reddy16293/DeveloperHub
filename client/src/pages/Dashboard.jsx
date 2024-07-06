@@ -28,14 +28,14 @@ const Dashboard = () => {
   }
 
   if (loading) {
-    return <div>Loading...</div>;
+    return <div className="flex justify-center items-center h-screen text-white">Loading...</div>;
   }
 
   return (
     <div className="flex flex-col justify-start items-center min-h-screen text-white">
       <div className="text-4xl my-8">Welcome to Developer Hub</div>
-      <div className="w-full max-w-screen-lg grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 gap-x-6">
-        {usersData.length >= 1 ? 
+      <div className="w-full grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 px-4">
+        {usersData.length > 0 ? 
           usersData.map(profile => <Card key={profile._id} profile={profile} />) 
           : <div>No profiles found.</div>
         }

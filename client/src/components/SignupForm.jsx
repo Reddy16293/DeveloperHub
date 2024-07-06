@@ -7,8 +7,8 @@ const SignupForm = ({ formdata, ChangeHandler, submitHandler }) => {
 
   return (
     <div>
-      <form className='max-w-lg' onSubmit={submitHandler}>
-        <div className='text-white'>
+      <form className='max-w-lg mx-auto' onSubmit={submitHandler}>
+        <div className='text-white mb-4'>
           <label className='font-semibold'>
             <p>Full Name<sup>*</sup></p>
             <input
@@ -22,7 +22,7 @@ const SignupForm = ({ formdata, ChangeHandler, submitHandler }) => {
             />
           </label>
         </div>
-        <div className='text-white'>
+        <div className='text-white mb-4'>
           <label className='font-semibold'>
             <p>Email<sup>*</sup></p>
             <input
@@ -36,7 +36,7 @@ const SignupForm = ({ formdata, ChangeHandler, submitHandler }) => {
             />
           </label>
         </div>
-        <div className='text-white'>
+        <div className='text-white mb-4'>
           <label className='font-semibold'>
             <p>Mobile<sup>*</sup></p>
             <input
@@ -50,7 +50,7 @@ const SignupForm = ({ formdata, ChangeHandler, submitHandler }) => {
             />
           </label>
         </div>
-        <div className='text-white'>
+        <div className='text-white mb-4'>
           <label className='font-semibold'>
             <p>Skills<sup>*</sup></p>
             <input
@@ -65,7 +65,7 @@ const SignupForm = ({ formdata, ChangeHandler, submitHandler }) => {
             <p className='text-sm'>* Please include commas after every skill</p>
           </label>
         </div>
-        <div className='text-white'>
+        <div className='text-white mb-4'>
           <label className='font-semibold'>
             <p>Password<sup>*</sup></p>
             <div className='relative'>
@@ -84,7 +84,7 @@ const SignupForm = ({ formdata, ChangeHandler, submitHandler }) => {
             </div>
           </label>
         </div>
-        <div className='text-white'>
+        <div className='text-white mb-4'>
           <label className='font-semibold'>
             <p>Confirm Password<sup>*</sup></p>
             <div className='relative'>
@@ -103,7 +103,7 @@ const SignupForm = ({ formdata, ChangeHandler, submitHandler }) => {
             </div>
           </label>
         </div>
-        <button className='bg-green-500 mt-4 w-full rounded py-2' type="submit">
+        <button className='bg-green-500 mt-4 w-full rounded py-2'>
           Create Account
         </button>
       </form>

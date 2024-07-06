@@ -22,14 +22,18 @@ const Navbar = ({ isLoggedIn, setIsLoggedIn }) => {
       <nav>
         <ul className='text-pink-200 flex gap-4'>
           <li>
-            <Link to='/'>Home</Link>
+            <Link to='/' className='hover:text-pink-300 transition duration-300'>Home</Link>
           </li>
-          <li>
-            <Link to='/'>About</Link>
-          </li>
-          <li>
-            <Link to='/'>Contact</Link>
-          </li>
+          {!isLoggedIn && (
+            <>
+              <li>
+                <Link to='/about' className='hover:text-pink-300 transition duration-300'>About</Link>
+              </li>
+              <li>
+                <Link to='/contact' className='hover:text-pink-300 transition duration-300'>Contact</Link>
+              </li>
+            </>
+          )}
         </ul>
       </nav>
 
@@ -37,23 +41,23 @@ const Navbar = ({ isLoggedIn, setIsLoggedIn }) => {
         {!isLoggedIn && (
           <>
             <Link to='/login'>
-              <button className='bg-teal-950 px-3 py-0.75 rounded'>Login</button>
+              <button className='bg-teal-950 px-3 py-1 rounded hover:bg-teal-900 transition duration-300'>Login</button>
             </Link>
             <Link to='/signup'>
-              <button className='bg-teal-950 px-3 py-0.75 rounded'>Signup</button>
+              <button className='bg-teal-950 px-3 py-1 rounded hover:bg-teal-900 transition duration-300'>Signup</button>
             </Link>
           </>
         )}
         {isLoggedIn && (
           <>
-            <button className='bg-teal-950 px-3 py-0.75 rounded' onClick={handleLogout}>
+            <button className='bg-teal-950 px-3 py-1 rounded hover:bg-teal-900 transition duration-300' onClick={handleLogout}>
               Logout
             </button>
             <Link to='/dashboard'>
-              <button className='bg-teal-950 px-3 py-0.75 rounded'>Dashboard</button>
+              <button className='bg-teal-950 px-3 py-1 rounded hover:bg-teal-900 transition duration-300'>Dashboard</button>
             </Link>
             <Link to='/myprofile'>
-              <button className='bg-teal-950 px-3 py-0.75 rounded'>My Profile</button>
+              <button className='bg-teal-950 px-3 py-1 rounded hover:bg-teal-900 transition duration-300'>My Profile</button>
             </Link>
           </>
         )}

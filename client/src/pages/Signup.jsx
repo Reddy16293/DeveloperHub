@@ -34,17 +34,16 @@ const Signup = ({ setIsLoggedIn }) => {
       .then((response) => {
         if (response.data.success) {
           toast.success('Account Created');
-          setIsLoggedIn(true);
-          navigate('/login');
-          toast.message('Please log in to continue');
           
+          toast.success('Please log in to continue');
+          navigate('/login');
         } else {
-          toast.error(response.data.message || 'Registration failed');
+          toast.error(response.data.message || 'Error');
         }
       })
       .catch((error) => {
         console.error('There was an error registering the user!', error);
-        toast.error('Registration failed. Please try again.');
+        toast.error('Registration failed. Please try again or User Already Exists.');
       });
   };
 
