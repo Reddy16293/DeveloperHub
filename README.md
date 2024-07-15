@@ -43,3 +43,15 @@ npm install
 
 ```
 
+### Home Page
+
+### LoginPage
+
+### SignUp Page
+
+### Dashboard Page
+
+### View Profile 
+
+### My Profile
+
