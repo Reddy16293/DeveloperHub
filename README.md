@@ -45,6 +45,8 @@ npm install
 
 ### Home Page
 
+<img src="https://github.com/your-username/your-repository/blob/main/images/screenshot.png" alt="Screenshot of the project" width="500"/>
+
 ### LoginPage
 
 ### SignUp Page
