@@ -42,18 +42,17 @@ cd client
 npm install
 
 ```
+# Home Page
 
-### Home Page
+![Screenshot of the project](https://github.com/your-username/your-repository/blob/main/images/screenshot.png)
 
-<img src="https://github.com/your-username/your-repository/blob/main/images/screenshot.png" alt="Screenshot of the project" width="500"/>
+# LoginPage
 
-### LoginPage
+# SignUp Page
 
-### SignUp Page
+# Dashboard Page
 
-### Dashboard Page
+# View Profile
 
-### View Profile 
-
-### My Profile
+# My Profile
 
