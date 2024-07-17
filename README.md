@@ -42,17 +42,24 @@ cd client
 npm install
 
 ```
-# Home Page
+## Home Page
+This is the home page
+![Screenshot of the project](https://github.com/Reddy16293/DeveloperHub/blob/main/images/Homepage.png)
 
-![Screenshot of the project](https://github.com/your-username/your-repository/blob/main/images/screenshot.png)
+##### After Signup you can login with your credentials
+## LoginPage
+![Screenshot of the project](https://github.com/Reddy16293/DeveloperHub/blob/main/images/LoginPage.png)
 
-# LoginPage
+## SignUp Page
+![Screenshot of the project](https://github.com/Reddy16293/DeveloperHub/blob/main/images/SIgnupPage.png)
 
-# SignUp Page
+## Dashboard Page
+![Screenshot of the project](https://github.com/Reddy16293/DeveloperHub/blob/main/images/DashboardPage.png)
 
-# Dashboard Page
+## View Profile
+![Screenshot of the project](https://github.com/Reddy16293/DeveloperHub/blob/main/images/ViewProfilePage.png)
 
-# View Profile
+## My Profile
+![Screenshot of the project](https://github.com/Reddy16293/DeveloperHub/blob/main/images/MyProfilePage.png)
 
-# My Profile
-
+- **In future i will add the chat feature which can directly communicate with developers through website** 
