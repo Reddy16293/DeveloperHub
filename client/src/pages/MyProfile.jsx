@@ -1,12 +1,13 @@
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 import userpic from '../assets/userpic.jpeg';
-import { Navigate, Link } from 'react-router-dom';
+import { useNavigate, Link, Navigate } from 'react-router-dom';
 
 const MyProfile = ({ isLoggedIn }) => {
   const [userData, setUserData] = useState(null);
   const [loading, setLoading] = useState(true);
   const [myReview, setMyReview] = useState(null);
+  const navigate = useNavigate();
 
   useEffect(() => {
     const fetchProfileData = async () => {
@@ -62,7 +63,9 @@ const MyProfile = ({ isLoggedIn }) => {
             <h1 className='text-2xl font-semibold'><b>Email:</b> {userData.email}</h1>
             <h1 className='text-2xl font-semibold'><b>Mobile:</b> {userData.mobile}</h1>
             <h1 className='text-2xl font-semibold'><b>Country:</b> India</h1>
-            <Link to='#' className='bg-blue-500 py-2 px-6 rounded mt-4 text-xl text-white hover:bg-blue-600 transition duration-300 ease-in-out'>Edit Profile</Link>
+            <button onClick={() => navigate('/editprofile')} className='bg-blue-500 py-2 px-6 rounded mt-4 text-xl text-white hover:bg-blue-600 transition duration-300 ease-in-out'>
+              Edit Profile
+            </button>
           </div>
         </div>
 

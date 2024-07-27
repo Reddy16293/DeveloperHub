@@ -7,5 +7,6 @@ module.exports={
     AllUsers:require('./allprofiles-controller'),
     MyProfile:require('./myprofile-controller'),
     AddReview:require('./addreview-controller'),
-    MyReview:require('./myreviews-controller')
+    MyReview:require('./myreviews-controller'),
+    updateReview:require('./updateprofile')
 }

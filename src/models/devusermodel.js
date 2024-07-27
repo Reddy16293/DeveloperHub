@@ -29,15 +29,15 @@ const devuserSchema = new mongoose.Schema({
     }
 });
 
-// Hash password before saving the user document
+// Hash the password before saving
 devuserSchema.pre('save', async function(next) {
+    if (!this.isModified('password')) {
+        return next();
+    }
     try {
-        if (this.isModified('password')) {
-            // Hash the password with a salt
-            const salt = await bcrypt.genSalt(10);
-            this.password = await bcrypt.hash(this.password, salt);
-            this.confirmpassword = await bcrypt.hash(this.confirmpassword, salt);
-        }
+        const salt = await bcrypt.genSalt(10);
+        this.password = await bcrypt.hash(this.password, salt);
+        this.confirmpassword = this.password;
         next();
     } catch (error) {
         next(error);

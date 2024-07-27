@@ -1,6 +1,6 @@
 const express = require('express');
-const bcrypt = require('bcryptjs');
 const jwt = require('jsonwebtoken');
+const bcrypt = require('bcryptjs');
 const { Devuser } = require('../models');
 
 const Login = async (req, res) => {
@@ -18,6 +18,7 @@ const Login = async (req, res) => {
         }
 
         const isMatch = await bcrypt.compare(password, user.password);
+
         if (!isMatch) {
             return res.status(400).json({
                 message: 'Invalid Password',
@@ -37,7 +38,6 @@ const Login = async (req, res) => {
             if (err) throw err;
             res.json({ token });
         });
-
     } catch (err) {
         console.log(err);
         return res.status(500).json({

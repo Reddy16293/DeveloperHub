@@ -9,6 +9,7 @@ import PrivateRoute from "./components/PrivateRoute";
 import MyProfile from "./pages/MyProfile";
 import ViewProfile from "./pages/ViewProfile";
 import Contact from "./pages/Contact";
+import { EditProfile } from "./pages/EditProfile";
 
 const App = () => {
   const [isLoggedIn, setIsLoggedIn] = useState(false);
@@ -52,6 +53,7 @@ const App = () => {
           }
         />
         <Route path='/contact' element={<Contact />} />
+        <Route path='/editprofile' element={<EditProfile/>} />
       </Routes>
     </div>
   );

@@ -94,9 +94,7 @@ const ViewProfile = () => {
               <li key={index} className="text-lg text-pink-400">{skill}</li>
             ))}
           </ul>
-          <button className="bg-blue-500 py-1 px-3 rounded mt-4">
-            Edit Profile
-          </button>
+          
         </div>
       </div>
 
