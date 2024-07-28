@@ -1,3 +1,13 @@
+# Developers Hub
+
+Developers Hub is a platform where developers can sign up with their skills, and clients can review these skills and assign work accordingly. Future enhancements include a chatting feature to facilitate communication between developers and clients.
+
+## Features
+
+- **Developer Signup:** Developers can sign up and list their skills.
+- **Client Review:** Clients can browse through developer profiles and assign work.
+- **Profile Management:** Developers can update their profiles and skills.
+- **Chat Feature (Upcoming):** An integrated chat feature to facilitate direct communication between clients and developers.
 
 
 ## Installation
