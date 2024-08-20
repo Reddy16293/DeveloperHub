@@ -9,6 +9,7 @@ Developers Hub is a platform where developers can sign up with their skills, and
 - **Profile Management:** Developers can update their profiles and skills.
 - **Chat Feature (Upcoming):** An integrated chat feature to facilitate direct communication between clients and developers.
 
+
 ## Installation
 
 Follow these steps to set up the project locally.
