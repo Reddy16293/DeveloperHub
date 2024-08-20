@@ -4,17 +4,17 @@ const bcrypt = require('bcryptjs');
 // Update profile controller
 const updateProfile = async (req, res) => {
   try {
-    const { userId, fullname, email, mobile, skills, password, confirmpassword } = req.body;
+     const userId = req.user.id;
+    const { fullname, email, mobile, skills, password, confirmpassword } = req.body;
 
     // Validate passwords
     if (password !== confirmpassword) {
       return res.status(400).json({ message: 'Passwords do not match' });
     }
-
+    
     // Prepare the update object
     const updateData = {
       fullname,
-      email,
       mobile,
       skills,
     };
